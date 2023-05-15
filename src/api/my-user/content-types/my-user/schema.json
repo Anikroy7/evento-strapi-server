@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "my_users",
+  "info": {
+    "singularName": "my-user",
+    "pluralName": "my-users",
+    "displayName": "myUser",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "home_owner": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::home-owner.home-owner",
+      "required": false
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    }
+  }
+}

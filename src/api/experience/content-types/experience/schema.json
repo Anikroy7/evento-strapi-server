@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "experiences",
+  "info": {
+    "singularName": "experience",
+    "pluralName": "experiences",
+    "displayName": "experience",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50,
+      "minLength": 3
+    },
+    "price": {
+      "type": "integer",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "maxLength": 60
+    },
+    "address": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "date": {
+      "type": "datetime",
+      "required": true,
+      "unique": false
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "active ",
+        "inactive"
+      ],
+      "required": true
+    },
+    "category": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30,
+      "minLength": 3
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

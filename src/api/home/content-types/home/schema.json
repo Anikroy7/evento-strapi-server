@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "minLength": 10
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "integer",
+      "required": true
+    },
+    "superhost": {
+      "type": "json",
+      "required": true
+    },
+    "beds": {
+      "type": "integer",
+      "required": true
+    },
+    "bedrooms": {
+      "type": "integer",
+      "required": true
+    },
+    "baths": {
+      "type": "integer",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "type": {
+      "type": "string",
+      "default": "home",
+      "required": true
+    },
+    "category": {
+      "type": "string",
+      "required": true,
+      "default": "home"
+    },
+    "home_owner": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::home-owner.home-owner"
+    }
+  }
+}

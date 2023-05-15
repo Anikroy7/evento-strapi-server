@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_owners",
+  "info": {
+    "singularName": "home-owner",
+    "pluralName": "home-owners",
+    "displayName": "HomeOwner",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "minLength": 2
+    },
+    "address": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "phone": {
+      "type": "string",
+      "minLength": 5,
+      "required": true,
+      "unique": false
+    },
+    "homes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::home.home"
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": false
+    }
+  }
+}
