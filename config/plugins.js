@@ -1,4 +1,8 @@
-module.exports = ({ env }) => ({
+module.exports = ({ env }) => {
+
+  console.log(env('CLOUDINARY_NAME'),env('CLOUDINARY_SECRET'), env('CLOUDINARY_KEY'));
+ return {
+
     // ...
     upload: {
       config: {
@@ -10,9 +14,12 @@ module.exports = ({ env }) => ({
         },
         actionOptions: {
           upload: {},
+          uploadStream: {},
           delete: {},
         },
       },
     },
     // ...
-  });
+  }
+};
+

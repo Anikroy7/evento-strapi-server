@@ -13,7 +13,7 @@ module.exports = createCoreController("api::my-user.my-user", ({ strapi }) => ({
   async create(ctx) {
     const data = ctx.request.body;
 
-    console.log("data", data, data.data.email);
+    console.log("data", data, );
     try {
       const entry = await strapi.db.query("api::my-user.my-user").findOne({
         where: { email: data.data.email },
