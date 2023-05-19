@@ -81,7 +81,7 @@ module.exports = ({ env }) => ({
       database: env('DATABASE_NAME', 'evento'),
       user: env('DATABASE_USERNAME', 'postgres'),
       password: env('DATABASE_PASSWORD', "675Ot%u15KmI"),
-      ssl: false,
+      ssl: true,
     },
     debug: false,
   },
