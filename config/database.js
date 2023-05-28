@@ -76,16 +76,17 @@ module.exports = ({ env }) => ({
   connection: {
     client: 'postgres',
     connection: {
-      host: env('DATABASE_HOST', 'localhost'),
+      host: env('DATABASE_HOST', 'satao.db.elephantsql.com'),
       port: env.int('DATABASE_PORT', 5432),
-      database: env('DATABASE_NAME', 'evento'),
-      user: env('DATABASE_USERNAME', 'postgres'),
-      password: env('DATABASE_PASSWORD', "675Ot%u15KmI"),
+      database: env('DATABASE_NAME', 'lqhudlng'),
+      username: env('DATABASE_USERNAME', 'lqhudlng'),
+      password: env('DATABASE_PASSWORD', 'rcHdiBoYpoFE8c1r-yReIeckKPU6lKuk'),
       ssl: true,
     },
     debug: false,
   },
 });
+
 /* module.exports = ({ env }) => ({
   connection: {
     client: 'mysql',

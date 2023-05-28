@@ -67,6 +67,29 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::home-owner.home-owner"
+    },
+    "guestsCapacity": {
+      "type": "integer",
+      "required": true,
+      "min": 2
+    },
+    "availableSeats": {
+      "type": "integer",
+      "required": true
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order"
+    },
+    "cleaningFee": {
+      "type": "integer",
+      "required": true,
+      "unique": false
+    },
+    "serviceFee": {
+      "type": "integer",
+      "required": true
     }
   }
 }

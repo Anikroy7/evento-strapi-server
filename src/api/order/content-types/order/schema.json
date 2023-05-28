@@ -15,11 +15,40 @@
     "stripeId": {
       "type": "text"
     },
-    "home": {
-      "type": "json"
-    },
     "message": {
       "type": "string"
+    },
+    "userId": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::my-user.my-user"
+    },
+    "homeId": {
+      "type": "integer",
+      "required": true
+    },
+    "arrivalDate": {
+      "type": "date",
+      "required": true
+    },
+    "depratureDate": {
+      "type": "date",
+      "required": true
+    },
+    "price": {
+      "type": "integer",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 15,
+      "minLength": 4
+    },
+    "totalGuests": {
+      "type": "integer",
+      "required": true
     }
   }
 }

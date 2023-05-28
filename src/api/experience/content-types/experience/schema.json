@@ -58,6 +58,15 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "guestsCapacity": {
+      "type": "integer",
+      "required": true,
+      "min": 2
+    },
+    "availableSeats": {
+      "type": "integer",
+      "required": true
     }
   }
 }

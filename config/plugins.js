@@ -1,6 +1,6 @@
 module.exports = ({ env }) => {
 
-  console.log(env('CLOUDINARY_NAME'),env('CLOUDINARY_SECRET'), env('CLOUDINARY_KEY'));
+  /* console.log(env('CLOUDINARY_NAME'),env('CLOUDINARY_SECRET'), env('CLOUDINARY_KEY')); */
  return {
 
     // ...

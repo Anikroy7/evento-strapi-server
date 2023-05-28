@@ -8,9 +8,26 @@ const { createCoreController } = require("@strapi/strapi").factories;
 
 module.exports = createCoreController("api::order.order", ({ strapi }) => ({
   async create(ctx) {
-    const home = ctx.request.body;
-    const {data:{price, description, title}, message}= home
-    console.log(price, description, title );
+    const {
+      homeId,
+      userId,
+      message,
+      home,
+      arrivalDate,
+      depratureDate,
+      phoneNumber,
+      totalPrice,
+      totalGuests
+    } = ctx.request.body;
+    const {
+      image: {
+        data: { attributes: url },
+      },
+      price,
+      title,
+      description,
+    } = home;
+
     try {
       const transfromedItem = {
         quantity: 1,
@@ -22,30 +39,31 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
           },
         },
         description: description,
-        // images: [item.image], // optional
+        // image: url, // optional
       };
-
+      console.log(transfromedItem);
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ["card"],
         mode: "payment",
-        success_url: process.env.CLIENT_URL + "",
-        cancel_url: process.env.CLIENT_URL + "/?success=false",
+        success_url: "http://localhost:5173/",
+        cancel_url: "http://localhost:5173/" + "/?success=false",
         line_items: [transfromedItem],
       });
 
-      await strapi.service("api::order.order").create({
+    const data=  await strapi.service("api::order.order").create({
         data: {
-          home: {
-            title,
-            price,
-            description,
-          },
+          homeId,
+          userId,
+          message,
           stripeId: session.id,
-          message:message
+          arrivalDate,
+          depratureDate,
+          price: totalPrice,
+          phone:phoneNumber,
+          totalGuests
         },
       });
-
-      return { stripeSession: session };
+      return { stripeSession: session, data };
     } catch (error) {
       ctx.response.status = 500;
       return { error: "error", messaege: error };
