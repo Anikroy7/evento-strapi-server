@@ -18,11 +18,6 @@
       "maxLength": 50,
       "minLength": 3
     },
-    "description": {
-      "type": "text",
-      "required": true,
-      "maxLength": 60
-    },
     "address": {
       "type": "string",
       "required": true,
