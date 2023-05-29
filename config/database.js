@@ -72,18 +72,34 @@ module.exports = ({ env }) => {
  */
 // const path = require('path');
 
+// module.exports = ({ env }) =>{
+//   console.log(env('DATABASE_HOST'), env('DATABASE_PORT'), env('DATABASE_NAME'));
+//   return {
+//     connection: {
+//       client: "postgres",
+//       connection: {
+//         host: env("DATABASE_HOST", "localhost"),
+//         port: env.int("DATABASE_PORT", 5432),
+//         database: env("DATABASE_NAME", "evento"),
+//         user: env("DATABASE_USERNAME", "postgres"),
+//         password: env("DATABASE_PASSWORD", "675Ot%u15KmI"),
+//         ssl: true,
+//       },
+//       debug: false,
+//     },
+//   }
+// };
 module.exports = ({ env }) => ({
   connection: {
-    client: "postgres",
+    client: 'postgres',
     connection: {
-      host: env("DATABASE_HOST", "localhost"),
-      port: env.int("DATABASE_PORT", 5432),
-      database: env("DATABASE_NAME", "evento"),
-      user: env("DATABASE_USERNAME", "postgres"),
-      password: env("DATABASE_PASSWORD", "675Ot%u15KmI"),
-      ssl: true,
+      host: env('PGHOST', '127.0.0.1'),
+      port: env.int('PGPORT', 5931),
+      database: env('PGDATABASE', 'railway'),
+      user: env('PGUSER', 'postgres'),
+      password: env('PGPASSWORD', 'password'),
+      ssl: env.bool(true),
     },
-    debug: false,
   },
 });
 
