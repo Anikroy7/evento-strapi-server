@@ -45,8 +45,8 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ["card"],
         mode: "payment",
-        success_url: "http://localhost:5173/",
-        cancel_url: "http://localhost:5173/" + "/?success=false",
+        success_url: "https://evento-1bb08.web.app/",
+        cancel_url: "https://evento-1bb08.web.app/" + "/?success=false",
         line_items: [transfromedItem],
       });
 
